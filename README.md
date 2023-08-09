@@ -28,10 +28,10 @@ Source Data:
   * File: "tabn312.20.xls"
 
 * Edgelist/Faculty Affiliations: [Wapman, et al. Nature, 2022](https://www.nature.com/articles/s41586-022-05222-x#Sec2)
-  * File: "Edgelist.csv"
+  * File: "edge-lists.csv"
 
 * Top 5 School Doctoral Degrees Confirmed:
-  * File: "Top5Combined.xlsx"
+  * File: "Top5Compiled.xlsx"
     * Berkeley: [University of California Degrees Awarded Data](https://www.universityofcalifornia.edu/about-us/information-center/degrees-awarded-data)
     * Harvard: [Harvard Fact Book: Degrees Awarded](https://oira.harvard.edu/factbook/fact-book-degrees/#deg_deg)
     * Michigan: [University of Michigan: Degree Reports, Section 500](https://ro.umich.edu/reports/degrees)
@@ -43,11 +43,11 @@ I then compiled them all into one dataset, which contained only the pertinent in
 
 In the compiled sheet, "FacultyOddsCompiled.xlsx"
 
-Sheet 1 contains the background data involving where faculty are located and where they were trained (condensed replica of "Edgelists.csv")
+Sheet 1 contains the background data involving where faculty are located and where they were trained (condensed replica of "edge-lists.csv")
 
-Sheet 2 contains the total number of doctoral degrees (replica of "tabn312.20")
+Sheet 2 contains the total number of doctoral degrees (condensed replica of "tabn312.20.xls" with institution ID numbers)
 
-Sheet 3 contains the compiled data for degrees conferred by academic domain for the top 5 faculty producing institutions (average over relavent time period, condensed from "Taop4Combined.xlsx")
+Sheet 3 contains the compiled data for degrees conferred by academic domain for the top 5 faculty producing institutions (average over relavent time period, condensed from "Top5Compiled.xlsx")
 
 Sheet 4 contains a pivot table.
 
@@ -55,13 +55,36 @@ Sheet 4 contains a pivot table.
 A few base assumptions are made as well:
 1. The timeframe for the data is for degrees conferred from 2011-2020. Where data does not exist, averages are substituted.
 2. For nation-wide analyses, all doctoral degrees are considered, including professional doctorates (M.D.s, J.D.s, D.Pharm.s, etc.). As these still can be hired for faculty, the analysis should be mostly internally consistent, but it does inflate the proportional success of schools with only research doctorates (e.g., Georgia Tech does not have a law or med school, all doctoral degrees are Ph.D.s). In the "top-5" analysis, this assumption is no longer present.
-3. The faculty network does not indicate when hires were made, so it assumes that the relative proportion of new hires is the same as existing hires. As new hires constitute 20% of the data set and there is a very large number of faculty, this is likely a good assumption.
+3. The faculty network does not indicate when hires were made, so it assumes that the relative proportion of new hires is the same as existing hires. As new hires constitute 20% of the data set and there is a very large number of faculty, this is likely a good assumption, though it will not reflect universities that have recently gotten much stronger (e.g., Georgia Tech, Carnegie Mellon)
+4. Hires are only considered at other doctoral-granting universities, so some tenure-track academic positions are neglected. This is standard for such analyses.
+5. Finally, public data is compiled for schools which fail to grant a certain number of undergraduate degrees, which leaves out some elite options (e.g. Dartmouth), but captures most of the schools in consideration. For the sake of completeness, top 10 "prestige" schools (as determined by the Nature paper) were added back in manually. This ended up being CalTech, MIT, Princeton, and Yale. According to the same list, the most likely significant occlusions because of this are as follows: Carnegie Mellon, Brandeis, Brown, Rochester, and Rice. Other significant schools which were left out primarily grant professional degrees, such as UC-San Francisco, or were below 40 in "prestige", such as Vanderbilt.
 
+
+Compiling the new dataset before setting out to answer questions.:
+For sheet 2, I directly imported "edge-lists.xlsx". Then, I deleted all values without the TaxonomyLevel "Domain" to prevent double counting and to allow for the Top5 Analysis.
+
+For sheet 1, I copied the school names and the doctoral degrees granted per year from the NCES resource. I then matched school names with ID numbers assigned to them from the more complex edge-list dataset, so that vlookup could be used later. Then, I deleted any schools without matching IDs from the Nature dataset. I also deleted schools with fewer than 50 doctoral degrees granted per year, to remove any outlier effects. These were mostly secondary campuses of flagship state universities.
+
+For sheet 3, I found the number of doctoral degrees granted by academic domain for each of the 5 schools, and compilked them into a single format by year. For years without available data, I replaced the dataset with a 5-year median of surrounding years. Note that most domain-level data was not available for Harvard.
 
 Questions to answer:
 1. Which schools produce the most faculty members?
 
+In order to do this, create a new column for existing faculty members. To do so, use SUM(FILTER()) to mimic VLOOKUP for all instances of a university ID. Filter out to get the school idea and only the taxonomy level "Domain" (otherwise, some faculty double- or triple-counted), then output the "total". Example of the formula shown in the following figure.
+
+![image](https://github.com/spencer-alliston/J124Final/assets/139919855/098d37fe-8916-4ba9-b2be-2bb506e8013f)
+
+Then, sort by this column, and see the top universities as seen below.
+
+![image](https://github.com/spencer-alliston/J124Final/assets/139919855/1b22b97a-9708-4403-8b6e-6ca8a5dd8fad)
+
+
 2. Which schools have the highest portion of doctoral students becoming faculty members?
+
+Now, divide total number of professors by 5 to attain total number hired during the sample period, then by 10 to get an approximation for how many faculty are hired from the university before year. Then divide that by the doctoral degrees conferred per year, which will be an estimate of what percentage of current doctoral students will be hired as faculty within 4 years of degree conferral. The top 20 schools by this metric can also be seen below.
+
+![image](https://github.com/spencer-alliston/J124Final/assets/139919855/ad91e27a-5692-461c-99f6-204e4989be74)
+
 
 3. Does the data on the top 5 schools change if we remove professional doctorates (J.D.s, M.D.s)?
 
