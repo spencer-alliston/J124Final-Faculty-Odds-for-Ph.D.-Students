@@ -18,14 +18,10 @@ Additionally, datasets such as the one behind the following paper, subtitled ["P
 
 ### Data Visualization
 
-First, a bar chart showing [the total number of faculty that each U.S. university has trained.](https://www.datawrapper.de/_/EyUTB/)
-
-![Doctoral School for Active U.S. Faculty](https://github.com/spencer-alliston/J124Final-Faculty-Odds-for-Ph.D.-Students/blob/main/EyUTB-active-faculty-produced-by-universities%20(1).png)
+On the left, a bar chart showing [the total number of faculty that each U.S. university has trained.](https://www.datawrapper.de/_/EyUTB/). On the right, a bar chart showing [the odds of a given student at each of those universities becoming tenure-track faculty.](https://www.datawrapper.de/_/kiWyA/)
 
 
-Second, a bar chart showing [the odds of a given student at each of those universities becoming tenure-track faculty.](https://www.datawrapper.de/_/kiWyA/)
-
-![Implied Odds of Faculty Hiring by Doctoral School](https://github.com/spencer-alliston/J124Final-Faculty-Odds-for-Ph.D.-Students/blob/main/kiWyA-odds-of-attaining-a-faculty-position-by-doctoral-university.png)
+ ![Doctoral School for Active U.S. Faculty](https://github.com/spencer-alliston/J124Final-Faculty-Odds-for-Ph.D.-Students/blob/main/EyUTB-active-faculty-produced-by-universities%20(1).png){width=100px}  ![Implied Odds of Faculty Hiring by Doctoral School](https://github.com/spencer-alliston/J124Final-Faculty-Odds-for-Ph.D.-Students/blob/main/kiWyA-odds-of-attaining-a-faculty-position-by-doctoral-university.png){width=100px}
 
 ### Data Analysis
 
