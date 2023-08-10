@@ -3,10 +3,9 @@
 
 ### Story Pitch
 
-The American academy is, in many ways, the academic envy of the developed world. It also has a math problem. There have been numerous studies and articles indicating the outisize influence of a small number of elite institutions, as well as several discussing the increasing gap between the number of doctoral degrees granted in the United States and the number of tenure-track faculty hired. What this analysis adds is an analysis of what schools most successfully turn doctoral students into professors.
+The American academy is, in many ways, the academic envy of the developed world. It also has a math problem. There have been numerous studies and articles indicating the outisize influence of a small number of elite institutions, as well as several discussing the increasing gap between the number of doctoral degrees granted in the United States and the number of tenure-track faculty hired. What has so far not been analyzed is what the odds are of the most successful students becoming faculty members. For a prospective graduate student, there is no guidance on the likelihood of success, even if she can get into the most competitive programs. In order to better look at the odds, hiring data was merged with degree conferrals to show the actual chance of a doctoral student at a given school becoming faculty within 4 years of graduation. As expected, top schools provided better chances for their graduates, though the percentages remained lower than students might hope. Then, a more granular analysis was done on the top 5 faculty-producing institutions (Berkeley, Harvard, Michigan, Stanford, and Wisconsin) to examine how placement rates fluctuated with field of study. Surprisingly, a humanities Ph.D. from any of these schools has better odds of a faculty placement than their STEM counterparts, though stubbornly below 50%
 
-By looking at the number of new hires that came from doctoral-degree granting schools in 2011-2020 as well as the degrees conferred by those schools, it is possible to see where an aspiring faculty member should most seriously consider pursuing their graduate studies. This advances the previous reporting in very important ways by allowing individuals to better evaluate the odds of success in a grueling career path.
-
+By looking at the number of new hires that came from doctoral-degree granting schools in 2011-2020 as well as the degrees conferred by those schools, it is possible to see where an aspiring faculty member should most seriously consider pursuing their graduate studies. This closes the gap in previous reporting which either took a high-minded institutional approach, or failed to recognize the need for individuals to evaluate options at such schools. For prospective graduate students and faculty, this shows where you are most likely able to have the biggest impact if your goal is a career in American avademia.
 
 ### Additional Sources
 Daniel Larremore, Associate Professor of Computer Science at CU-Boulder (daniel.larremore@colorado.edu). Daniel is the corresponding auther of the Nature paper that was one of the major data sources for this work. Their paper was on the outsize influence of certain institutions on the American academy. By looking at the data more granularly, the conclusions from their study could be made much stronger. In particular, the number of students graduated and the number of faculty members present (by field) could indicate where professors have the most influence via their student placements. This would reveal the outsize influence of individuals in the academy as opposed to institutions.
@@ -39,7 +38,9 @@ Source Data:
     * Stanford: [Stanford University Degrees Conferred](https://irds.stanford.edu/data-findings/degrees-conferred)
 
 
-I then compiled them all into one dataset, which contained only the pertinent information. Sheet one contains the combined doctoral degrees granted, and a calculated total number of hirees within 4 years of doctoral degree completion. This dataset, along with the base datasets for degrees conferred across the country and the "edgelist" faculty+school of doctorate sheet.
+I then compiled them all into one dataset, which contained only the pertinent information. Sheet one contains the combined doctoral degrees granted, and a calculated total number of hirees within 4 years of doctoral degree completion. This dataset, along with the base datasets for degrees conferred across the country and the "edgelist" faculty+school of doctorate sheet, can be found in this repo.
+
+### Database Development
 
 In the compiled sheet, "FacultyOddsCompiled.xlsx"
 
@@ -49,15 +50,6 @@ Sheet 2 contains the total number of doctoral degrees (condensed replica of "tab
 
 Sheet 3 contains the compiled data for degrees conferred by academic domain for the top 5 faculty producing institutions (average over relavent time period, condensed from "Top5Compiled.xlsx")
 
-Sheet 4 contains a pivot table.
-
-
-A few base assumptions are made as well:
-1. The timeframe for the data is for degrees conferred from 2011-2020. Where data does not exist, averages are substituted.
-2. For nation-wide analyses, all doctoral degrees are considered, including professional doctorates (M.D.s, J.D.s, D.Pharm.s, etc.). As these still can be hired for faculty, the analysis should be mostly internally consistent, but it does inflate the proportional success of schools with only research doctorates (e.g., Georgia Tech does not have a law or med school, all doctoral degrees are Ph.D.s). In the "top-5" analysis, this assumption is no longer present.
-3. The faculty network does not indicate when hires were made, so it assumes that the relative proportion of new hires is the same as existing hires. As new hires constitute 20% of the data set and there is a very large number of faculty, this is likely a good assumption, though it will not reflect universities that have recently gotten much stronger (e.g., Georgia Tech, Carnegie Mellon)
-4. Hires are only considered at other doctoral-granting universities, so some tenure-track academic positions are neglected. This is standard for such analyses.
-5. Finally, public data is compiled for schools which fail to grant a certain number of undergraduate degrees, which leaves out some elite options (e.g. Dartmouth), but captures most of the schools in consideration. For the sake of completeness, top 10 "prestige" schools (as determined by the Nature paper) were added back in manually. This ended up being CalTech, MIT, Princeton, and Yale. According to the same list, the most likely significant occlusions because of this are as follows: Carnegie Mellon, Brandeis, Brown, Rochester, and Rice. Other significant schools which were left out primarily grant professional degrees, such as UC-San Francisco, or were below 40 in "prestige", such as Vanderbilt.
 
 
 Compiling the new dataset before setting out to answer questions.:
@@ -67,8 +59,16 @@ For sheet 1, I copied the school names and the doctoral degrees granted per year
 
 For sheet 3, I found the number of doctoral degrees granted by academic domain for each of the 5 schools, and compilked them into a single format by year. For years without available data, I replaced the dataset with a 5-year median of surrounding years. Note that most domain-level data was not available for Harvard.
 
-Questions to answer:
-1. Which schools produce the most faculty members?
+### Underlying Assumptions to Analysis
+1. The timeframe for the data is for degrees conferred from 2011-2020. Where data does not exist, averages are substituted.
+2. For nation-wide analyses, all doctoral degrees are considered, including professional doctorates (M.D.s, J.D.s, D.Pharm.s, etc.). As these still can be hired for faculty, the analysis should be mostly internally consistent, but it does inflate the proportional success of schools with only research doctorates (e.g., Georgia Tech does not have a law or med school, all doctoral degrees are Ph.D.s). In the "top-5" analysis, this assumption is no longer present.
+3. The faculty network does not indicate when hires were made, so it assumes that the relative proportion of new hires is the same as existing hires. As new hires constitute 20% of the data set and there is a very large number of faculty, this is likely a good assumption, though it will not reflect universities that have recently gotten much stronger (e.g., Georgia Tech, Carnegie Mellon)
+4. Hires are only considered at other doctoral-granting universities, so some tenure-track academic positions are neglected. This is standard for such analyses.
+5. Finally, public data is compiled for schools which fail to grant a certain number of undergraduate degrees, which leaves out some elite options (e.g. Dartmouth), but captures most of the schools in consideration. For the sake of completeness, top 10 "prestige" schools (as determined by the Nature paper) were added back in manually. This ended up being CalTech, MIT, Princeton, and Yale. According to the same list, the most likely significant occlusions because of this are as follows: Carnegie Mellon, Brandeis, Brown, Rochester, and Rice. Other significant schools which were left out primarily grant professional degrees, such as UC-San Francisco, or were below 40 in "prestige", such as Vanderbilt.
+
+
+## Questions to answer:
+### 1. Which schools produce the most faculty members?
 
 In order to do this, create a new column for existing faculty members. To do so, use SUM(FILTER()) to mimic VLOOKUP for all instances of a university ID. Filter out to get the school idea and only the taxonomy level "Domain" (otherwise, some faculty double- or triple-counted), then output the "total". Example of the formula shown in the following figure.
 
@@ -79,26 +79,26 @@ Then, sort by this column, and see the top universities as seen below.
 ![image](https://github.com/spencer-alliston/J124Final/assets/139919855/1b22b97a-9708-4403-8b6e-6ca8a5dd8fad)
 
 
-2. Which schools have the highest portion of doctoral students becoming faculty members?
+### 2. Which schools have the highest portion of doctoral students becoming faculty members?
 
 Now, divide total number of professors by 5 to attain total number hired during the sample period, then by 10 to get an approximation for how many faculty are hired from the university before year. Then divide that by the doctoral degrees conferred per year, which will be an estimate of what percentage of current doctoral students will be hired as faculty within 4 years of degree conferral. The top 20 schools by this metric can also be seen below.
 
 ![image](https://github.com/spencer-alliston/J124Final/assets/139919855/ad91e27a-5692-461c-99f6-204e4989be74)
 
 
-3. Which schools are most underestimated by the traditional analysis (of question 1)? Who are the most overestimated?
+### 3. Which schools are most underestimated by the traditional analysis (of question 1)? Who are the most overestimated?
 
 Here, rank the schools under each method, then define a difference between them and sort. Higher numbers indicate that their students are hired significantly more than you would expect from the classic analysis, negative numbers indicate that students are hired less.
 
 ![image](https://github.com/spencer-alliston/J124Final/assets/139919855/a3c1ef33-16e6-4f0b-b823-2d14f6987e2d)
 
-Notable results from this analysis are that Utah State has a top 20 hire-rate despite not having that many faculty members in total. Similarly, CalTech has the 3rd best rate despite having the 42nd most faculty in the country. This reflects that their class size is smaller, and gives a new dimension to students trying to determine which schools they should attend.
+Notable data points from this analysis are that Utah State has a top 20 hire-rate despite not having that many faculty members in total, and UC Santa Barbara is top 10 in hire-rate as well. Similarly, CalTech has the 3rd best rate despite having the 42nd most faculty in the country. This reflects that their class size is smaller, and gives a new dimension to students trying to determine which schools they should attend.
 
 ![image](https://github.com/spencer-alliston/J124Final/assets/139919855/75235406-f99c-4131-9450-bad4d60559b6)
 
 On the other end, schools like USC, Florida, NYU, Texas A&M, and Ohio State have faculty placements that would imply a very high hire-rate, but that isn't actually reflected in their numbers. Some of this may be the nature of their doctoral programs, but it remains helpful context.
 
-4. Which of the departments at the top 5 schools produces the most faculty? Which has the highest percentage of students end up faculty?
+### 4. Which of the departments at the top 5 schools produces the most faculty? Which has the highest percentage of students end up faculty?
 
 By using the assembled "Top5Compiled" dataset, can now filter using the formula below, which specifies which domain we are interested in. The specific formula shown is for Engineering, which also specifies to include Computer Science, as they are grouped together in the Ph.D.s dataset.
 
@@ -116,7 +116,7 @@ And repeat the steps from question #2 for prospective placements.
 
 Here, it is revealed that the humanities actually have higher hiring rates, at least at the most elite schools. This runs against the typical understanding of the situation, so it would be interesting to take a better look at this with the full data set.
 
-5. What doctoral institution gives a prospective engineering faculty member the best chance of success?
+### 5. What doctoral institution gives a prospective engineering faculty member the best chance of success?
 
 Now, simply filter for "Engineering" and sort by odds, and see the top schools, ranked. As a prospective engineering faculty member, this is of primary interest for me and those like me.
 
