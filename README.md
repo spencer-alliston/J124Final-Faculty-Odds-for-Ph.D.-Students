@@ -18,7 +18,7 @@ Additionally, datasets such as the one behind the following paper, subtitled ["P
 
 ### Data Visualization
 
-First, a bar chart showing [the total number of faculty that each U.S. university has trained.](https://www.datawrapper.de/_/tI75G/)
+First, a bar chart showing [the total number of faculty that each U.S. university has trained.](https://www.datawrapper.de/_/EyUTB/)
 
 
 
