@@ -23,7 +23,7 @@ On the left, a bar chart showing [the total number of faculty that each U.S. uni
 
 <img src = "https://github.com/spencer-alliston/J124Final-Faculty-Odds-for-Ph.D.-Students/blob/main/EyUTB-active-faculty-produced-by-universities%20(1).png" width ="500" /> <img src = "https://github.com/spencer-alliston/J124Final-Faculty-Odds-for-Ph.D.-Students/blob/main/kiWyA-odds-of-attaining-a-faculty-position-by-doctoral-university.png" width ="500" />
 
-## ![Doctoral School for Active U.S. Faculty](https://github.com/spencer-alliston/J124Final-Faculty-Odds-for-Ph.D.-Students/blob/main/EyUTB-active-faculty-produced-by-universities%20(1).png){width=100px}  ![Implied Odds of Faculty Hiring by Doctoral School](https://github.com/spencer-alliston/J124Final-Faculty-Odds-for-Ph.D.-Students/blob/main/kiWyA-odds-of-attaining-a-faculty-position-by-doctoral-university.png){width=100px}
+
 
 ### Data Analysis
 
