@@ -18,6 +18,12 @@ Additionally, datasets such as the one behind the following paper, subtitled ["P
 
 ### Data Visualization
 
+First, a bar chart showing [the total number of faculty that each U.S. university has trained.](https://www.datawrapper.de/_/tI75G/)
+
+
+
+Second, a bar chart showing the odds of a given student at each of those universities becoming tenure-track faculty.
+
 
 ### Data Analysis
 
@@ -96,7 +102,7 @@ Notable data points from this analysis are that Utah State has a top 20 hire-rat
 
 ![image](https://github.com/spencer-alliston/J124Final/assets/139919855/75235406-f99c-4131-9450-bad4d60559b6)
 
-On the other end, schools like USC, Florida, NYU, Texas A&M, and Ohio State have faculty placements that would imply a very high hire-rate, but that isn't actually reflected in their numbers. Some of this may be the nature of their doctoral programs, but it remains helpful context.
+On the other end, schools like USC, Florida, NYU, Texas A&M, and Ohio State have faculty placements that would imply a very high hire-rate, but that isn't actually reflected in their numbers. Some of this may be the nature of their doctoral programs, but it remains helpful context. Of the top 5 schools, Michigan seems to be most overestimated by this metric.
 
 ### 4. Which of the departments at the top 5 schools produces the most faculty? Which has the highest percentage of students end up faculty?
 
