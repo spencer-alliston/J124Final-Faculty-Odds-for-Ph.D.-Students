@@ -20,9 +20,9 @@ Additionally, datasets such as the one behind the following paper, subtitled ["P
 
 First, a bar chart showing [the total number of faculty that each U.S. university has trained.](https://www.datawrapper.de/_/EyUTB/)
 
+!['Bar Chart of Undergraduate Majors and Their Starting Median Salaries','A bar chart with 50 different undergraduate majors listed vertically on the left-hand side of the bar chart, while the associated starting median salary amount is indicated right next to the major, on the bar itself, in dollar amounts. The bars are colored a mint green, and "physician assistant" and "Spanish" is bolded to highlight that they are the highest and the lowest earning majors, respectively.  Physician assistant ranking the highest with $74,300 and Spanish ranking the lowest with $34,000.'](EyUTB-active-faculty-produced-by-universities (1).png)
 
-
-Second, a bar chart showing the odds of a given student at each of those universities becoming tenure-track faculty.
+Second, a bar chart showing [the odds of a given student at each of those universities becoming tenure-track faculty.](https://www.datawrapper.de/_/kiWyA/)
 
 
 ### Data Analysis
