@@ -86,11 +86,40 @@ Now, divide total number of professors by 5 to attain total number hired during 
 ![image](https://github.com/spencer-alliston/J124Final/assets/139919855/ad91e27a-5692-461c-99f6-204e4989be74)
 
 
-3. Does the data on the top 5 schools change if we remove professional doctorates (J.D.s, M.D.s)?
+3. Which schools are most underestimated by the traditional analysis (of question 1)? Who are the most overestimated?
 
-4. Which of the departments at the top 5 schools produces the most faculty? Which has the highest percentage students?
+Here, rank the schools under each method, then define a difference between them and sort. Higher numbers indicate that their students are hired significantly more than you would expect from the classic analysis, negative numbers indicate that students are hired less.
+
+![image](https://github.com/spencer-alliston/J124Final/assets/139919855/a3c1ef33-16e6-4f0b-b823-2d14f6987e2d)
+
+Notable results from this analysis are that Utah State has a top 20 hire-rate despite not having that many faculty members in total. Similarly, CalTech has the 3rd best rate despite having the 42nd most faculty in the country. This reflects that their class size is smaller, and gives a new dimension to students trying to determine which schools they should attend.
+
+![image](https://github.com/spencer-alliston/J124Final/assets/139919855/75235406-f99c-4131-9450-bad4d60559b6)
+
+On the other end, schools like USC, Florida, NYU, Texas A&M, and Ohio State have faculty placements that would imply a very high hire-rate, but that isn't actually reflected in their numbers. Some of this may be the nature of their doctoral programs, but it remains helpful context.
+
+4. Which of the departments at the top 5 schools produces the most faculty? Which has the highest percentage of students end up faculty?
+
+By using the assembled "Top5Compiled" dataset, can now filter using the formula below, which specifies which domain we are interested in. The specific formula shown is for Engineering, which also specifies to include Computer Science, as they are grouped together in the Ph.D.s dataset.
+
+![image](https://github.com/spencer-alliston/J124Final/assets/139919855/87c8e170-bd47-4646-ab29-cdaeeca2c51a)
+
+
+By sorting, that reveals the following list of most successful placements, with Berkeley's Natural Sciences division leading the rest.
+
+![image](https://github.com/spencer-alliston/J124Final/assets/139919855/7b630e67-988e-491a-9e28-ef6873e8ac08)
+
+
+And repeat the steps from question #2 for prospective placements.
+
+![image](https://github.com/spencer-alliston/J124Final/assets/139919855/878d776b-f03b-406a-b08f-153174606a5e)
+
+Here, it is revealed that the humanities actually have higher hiring rates, at least at the most elite schools. This runs against the typical understanding of the situation, so it would be interesting to take a better look at this with the full data set.
 
 5. What doctoral institution gives a prospective engineering faculty member the best chance of success?
 
+Now, simply filter for "Engineering" and sort by odds, and see the top schools, ranked. As a prospective engineering faculty member, this is of primary interest for me and those like me.
+
+![image](https://github.com/spencer-alliston/J124Final/assets/139919855/eec589ae-a208-42de-8e77-0d623000e3a4)
 
 
